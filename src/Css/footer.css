@@ -1,0 +1,21 @@
+.footer {
+    position: relative;
+    background-color: var(--red);
+  }
+  .foot-bar {
+    /* position:absolute; */
+    /* background-color: rgba(0,0,0,0.5); */
+    width: 85%;
+    margin: auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--small);
+    padding: 0.5em 0;
+  }
+  .foot-bar a {
+    margin:var(--xx-small);
+  }
+  .foot-bar a img{
+    width: 1em;
+  }

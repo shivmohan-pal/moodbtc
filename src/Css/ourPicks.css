@@ -1,0 +1,34 @@
+.ourPicks{
+  position: relative;  
+  width:85%;
+  margin-top:calc(var(--xx-large));
+}
+.ourPicks>h1 {
+    color:var(--black);
+    font-family: Roboto;
+    font-size: var(--large);
+}
+.slider {
+    /* text-align: center; */
+}
+.slide {
+    position: relative;
+    display:flex;
+    overflow: hidden;
+}
+
+.dots {
+    display:inline-block;
+    margin: var(--medium) auto;
+}
+.dots li {
+    display: inline-block;
+    width: var(--small);
+    height: var(--small);
+    background: #C5C5C5;
+    border-radius: 50%;
+    margin:var(--xx-small);
+}
+.active-dot {
+    background: var(--red)!important;
+}

@@ -1,0 +1,49 @@
+.news {
+    position: relative;
+    margin:calc(var(--xx-large)) auto;
+    width: 85%;
+}
+
+.news-block {
+    background-color: var(--brown);
+    padding:var(--xx-small);
+    border-radius: var(--medium);
+}
+.newsItem *{
+  text-align: left;
+  margin:var(--small);
+  font-size:var(--medium);
+}
+.newsItem {
+    padding:var(--small);
+    border-bottom: 1px solid var(--gray);
+}
+.newsItem:hover {
+    opacity:0.5;
+    cursor: pointer;
+}
+
+.newsItem:last-child {
+    border: none;
+}
+.newsItem a {
+    margin:0;
+    padding:0;
+}
+.newsItem pre{
+ color:var(--gray);
+ width: inherit;
+ box-sizing: content-box;
+ white-space: pre-wrap;       /* Since CSS 2.1 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+.newsItem kbd {
+    font-size: 0.7em !important;
+    text-align: left;
+    color:var(--navyBlue);
+    /* text-decoration: underline;
+    text-decoration-color: var(--gray); */
+}

@@ -1,0 +1,162 @@
+.home {
+}
+.howSignal {
+    background:  var(--white);
+    position: relative;
+    display:inline-block;
+    width:65%;
+    transform: rotate(-3deg);
+}
+.howSignal>div{
+    background: var(--red);
+    display: absolute;
+    width:100%;
+    height: 100%;
+    transform: rotate(3deg);
+    padding:9% 9%;
+    box-sizing: border-box;
+}
+.howSignal img {
+ position: absolute;
+ width: 6em;
+ height: 6em;
+ top:calc(-3% - 3em);
+ left: calc(50% - 3em);
+ display:inline-block;
+ z-index: 2;
+ transform: rotate(5deg);
+}
+.howSignal div h3 {
+    margin-bottom: 0.5em;
+    font-size: 1.3em;
+}
+.howSignal div p {
+color:black;
+text-align: left;
+margin-bottom: 1em;
+font-family: Poppins;
+font-size: 0.85em;
+font-style: normal;
+font-weight: 100;
+line-height: 1.2em;
+letter-spacing: 0em;
+}
+
+.features {
+    position: relative;
+    width:65%;
+}
+.features h1 {
+    margin-bottom: 1.8em; 
+}
+.features ul {
+    margin-top: 2rem;
+    text-align: left;
+}
+.features li {
+    margin:var(--large);
+    margin-left: var(--xx-large);
+}
+.features li i {
+    display: inline-block;
+    vertical-align: top;
+    margin: var(--small);
+}
+.features li div {
+    display: inline-block;
+    vertical-align: top;
+    margin:var(--small);
+}
+.features li div h2 {
+    font-size:var(--medium);
+}
+.features li p {
+    margin:var(--xx-small) 0;
+    font-family:Poppins;
+    font-weight:500;
+    width: 70%;
+}
+.faq {
+    position: relative;
+    width: 65%;
+}
+.faq h1 {
+}
+.faq p {
+  
+}
+.faq ul {
+    margin-top: var(--large);
+}
+.faq li {
+    padding: var(--medium) var(--xx-large);
+    background: var(--white);
+    border-radius: var(--medium);
+    margin:var(--small);
+    color:var(--black);
+    font-size: var(--medium);
+    font-weight: bold;
+    text-align: left;
+}
+
+.testimony {
+ position: relative;
+ width: 65%;
+}
+.testimony div { 
+    width:55%;
+    margin: auto;
+}
+.testimony h1 {
+    color:var(--black);
+    margin-left: 0;
+    text-align: left;
+}
+.testimony p {
+    font-family:Poppins;
+    text-align: left;
+    color:#12264E;
+}
+.join {
+    position: relative;
+    width:65%;
+}
+.join h1{
+  font-weight: normal;
+}
+.join h1 strong {
+    font-family: Poppins;
+}
+.join p {
+    font-family:Poppins;
+    text-align: center;
+    font-weight: 400;
+    width: 80%;
+    margin: auto;
+    font-size: var(--medium);
+    line-height: var(--large);
+}
+.welcome-button {
+ position: relative;
+ margin:var(--xx-large) auto auto;
+ background-color: var(--white);
+ padding: var(--xx-small);
+ display: inline-block;
+ border-radius: var(--medium);
+}
+.welcome-button span {
+    display: inline-block;
+    font-family: Roboto;
+    padding: var(--x-small);
+    font-size: var(--small);
+    font-weight: bold;
+}
+.w{
+    color:white;
+    background: var(--red);
+    border-radius: var(--medium);
+    margin-right:var(--xx-small) ;
+}
+.l {
+    color:var(--red);
+}

@@ -1,0 +1,74 @@
+.cryptoLive {
+    position: relative;
+    width: 80%;
+    margin: var(--xx-large) auto;
+    padding: var(--large) var(--small);
+    background: var(--brown);
+    border-radius: var(--small);
+}
+
+.cryptoLive h1 {
+    font-family: Poppins;
+    font-size: var(--large);
+    margin-bottom: var(--large);
+}
+
+.input {
+    padding: var(--x-small);
+    width: 80%;
+    background: transparent;
+    height: var(--medium);
+    border: none;
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.2);
+    border-radius: var(--x-small);
+    font-size: var(--large);
+    color: var(--navyBlue);
+}
+
+.input:focus {
+    outline: none;
+}
+
+.coins-table {
+    width: 83%;
+    margin:var(--large) auto;
+}
+.table-head {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding:var(--x-small);
+    background: var(--red);
+    border-radius: var(--xx-small) var(--xx-small) 0 0;
+}
+.table-head .table-col:first-child {
+    text-align: left;
+}
+.table-body {
+    display: grid;
+    grid-template-rows: 1fr;
+}
+.table-row {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--gray);
+    padding:var(--x-small);
+    align-items: center;
+    border-radius:0 0 var(--xx-small) var(--xx-small);
+}
+.table-row:nth-child(even){
+    background: var(--dark-gray);
+}
+.table-row .table-col:first-child{
+    text-align: left;
+}
+.table-col {
+    text-align:right;
+    padding:var(--xx-small)
+}
+.table-row .table-col:first-child *{
+    display: inline-block;
+    vertical-align: middle;
+}
+.table-row .table-col img{
+    margin-right: var(--x-small);
+}

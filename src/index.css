@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto|Arizonia|Hubballi|Poppins");
+:root {
+  --xx-small:0.25rem;
+  /* --xx-small:0.20em; */
+  --x-small:0.80rem;
+  /* --x-small:0.40em; */
+  --small: 1rem;
+  /* --small:0.60em; */
+  --small-medium:1.25rem;
+  /* --small-medium:0.80em; */
+  --medium: 1.6rem;
+  /* --medium:1em; */
+  --large: 2rem;
+  /* --large:1.20em; */
+  --x-large:3rem;
+  /* --x-large:1.4em; */
+  --xx-large:4rem;
+  /* --xx-large:1.6em; */
+  --white: #eeeeee;
+  --black:#020203;
+  --red:#F6416C;
+  --green:rgb(36, 236, 36);
+  --brown:#151516;
+  --light-gray:#f6f6f6;
+  --dark-gray: #3d3d3d;
+  --link-color:#00DBDE;
+  --navyBlue:#515F7A;
+  --gray:rgba(238, 238, 238, 0.5);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Hubballi;
+  color:white;
+}
+body {
+  position: relative;
+ background: var(--black);
+
+}
+.title {
+  font-family: Arizonia;
+  font-style: normal;
+  font-weight: normal;
+  /* border: 1px solid #F6416C; */
+  text-shadow: var(--red) 0 -2px;
+}
+input ,button,a {
+  cursor:pointer;
+  text-decoration: none;
+}
+i{
+  color:white;cursor:pointer;font-size: 1.8em; text-align: center;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+ul, li {
+  list-style: none;
+}
+/*---------scroll-bar Start---------*/
+/* width */
+::-webkit-scrollbar {
+  /* background: #f1f1f1; */
+  background: transparent;
+  width: 0.5rem;
+  padding:0.5rem; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #f1f1f1; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: #888; */
+  background: var(--gray);
+  border-radius: 2rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  /* background: #555; */
+  background: var(--white);
+}
+/*--------scroll-bar Over-----*/
+
+
+.content-window {
+  position: relative;
+  width:100%;
+  overflow-y:visible;
+}
+.content-window-child {
+   position: relative;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.heading {
+  font-size: var(--x-large);
+  margin:var(--small);
+  /* margin-bottom: var(--xx-small); */
+}
+
+@media screen and (orientation: portrait) {
+
+  .content-window-child {
+    min-height: 50vh;
+  }
+  .main {
+    min-height: 98.55vh;
+  }
+  
+}

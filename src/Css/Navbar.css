@@ -1,0 +1,36 @@
+.navbar {
+  /* position: relative; */
+  position: fixed;
+  top:0;
+  right:0;
+  background-color: transparent;
+  width:100%;
+  z-index: 2;
+  box-sizing: border-box;
+}
+.bar {
+  /* position:absolute; */
+  /* background-color: rgba(0,0,0,0.5); */
+  width: 92%; 
+  margin:2% auto;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  border-radius: var(--small);
+}
+.bar > h1 {
+  position: relative;
+  display: inline-block;
+  margin:auto auto auto 2rem;
+  transition: all 0.5s ease;
+}
+.bar > h1> a {
+  transition: all 0.5s ease;
+}
+.close {
+    position: relative;
+    display: inline-block;
+    margin:auto 2rem auto auto;
+    text-shadow: var(--red) 0 -1.5px;
+}

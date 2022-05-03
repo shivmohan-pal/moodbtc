@@ -1,0 +1,71 @@
+.books *{
+  font-family: Poppins;
+}
+.books {
+ position: relative; 
+ margin-top:calc(var(--xx-large) + var(--medium));
+ width: 85%;
+ margin-bottom: calc(var(--xx-large) + var(--xx-large));
+}
+.books h1 {
+  color:var(--black);
+  font-size: var(--large);
+}
+.motoLine {
+  margin:auto;
+  width:70%;
+  color:var(--black);
+  font-size: var(--small-medium);
+}
+.motoLine strong {
+ color:var(--black);
+}
+.bookRow *{
+  color:var(--black);
+  /* text-align: left; */
+}
+.bookRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: var(--x-large);
+  justify-content: space-between;
+  margin:var(--x-large) auto;
+  justify-content: center;
+}
+.bookCol {
+  display: inline-block;
+  width:70%;
+  margin:auto;
+}
+.bookTitle {
+ font-weight: 300;
+ margin:var(--xx-small) auto;
+ font-size: var(--medium);
+}
+.bookAuthor {
+ font-weight: 100;
+ margin:var(--xx-small) auto;
+ font-size:var(--small);
+}
+.bookCol a{
+  display: block;
+  margin-top:var(--medium);
+  color:var(--red);
+  font-weight:700;
+  cursor: pointer !important;
+}
+.bookCol a:hover {
+  animation: goback 0.5s infinite linear;
+}
+
+@keyframes goback {
+  from {transform:translateX(0);}
+  to {transform:translateX(12px)}
+}
+
+@media screen and (max-width:700px) {
+.bookRow {
+  grid-template-columns: 1fr;
+}
+  
+}

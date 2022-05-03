@@ -1,0 +1,27 @@
+.App {
+  position: relative;
+  text-align: center;
+  max-width: 1400px;
+  margin:auto;
+}
+.main {
+  position: relative;
+  /* overflow: auto; */
+   /* padding: 1em 1em;  */
+   min-height: 95vh;
+   z-index: 1;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .main {
+    min-height: 98.55vh;
+  }
+}

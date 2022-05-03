@@ -1,0 +1,93 @@
+.menu {
+     background-color: black;
+     position: absolute;
+     left: 0;
+     right: 0;
+     color:white;
+     display: inline-grid;
+     align-items: center;
+     padding: 1vh 1vw;
+     z-index: 2;
+     border-bottom: 2px solid var(--white);
+}
+.fisSlide {
+    position:absolute;
+    top:0;
+    left:0;
+    background:var(--dark-gray);
+    width:0%;
+    height:100%;
+    border-radius:3px;
+    transition: all 0.5s;
+    z-index: -1;
+    }
+.menu > h1 {
+    color:#C07B7B !important;
+}
+.menu-box {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu-box ul li {
+    position: relative;
+    margin: 1rem;
+    border-radius:3px;
+    padding: 0.5em 0.6em;
+    overflow: hidden;
+}
+.menu-box a:active {
+    color:var(--link-color);
+}
+
+.menu-box a:hover {
+    color:var(--link-color);
+}
+.active {
+    color:var(--link-color) !important;
+}
+.active>div {
+    width:100%;
+}
+.nav a {
+    position: relative;
+    display: block;
+    margin: 1rem;
+    padding: 0.3em 0.4em;
+    border-radius:3px;
+    text-align: left;
+    overflow: hidden;
+} 
+.nav a:hover>div {
+    width: 100%;
+}
+.menu-box a {
+    position: relative;
+    color:white;
+    font-size: var(--large);
+}
+
+.sodt a{
+    font-size: var(--x-large);
+}
+.social {
+    margin-top: 1rem;
+}
+.social-links {
+    margin:0;
+}
+.social-links li {
+    display: inline-block;
+}
+.social-links li:hover {
+    animation: shake 0.5s linear;
+  }
+
+  
+@keyframes shake {
+    0% {transform: rotate(0deg);}
+    25% { transform: rotate(-25deg);}
+    50% { transform: rotate(0deg);}
+    75% { transform: rotate(25deg);}
+    100% { transform: rotate(0deg);}
+}

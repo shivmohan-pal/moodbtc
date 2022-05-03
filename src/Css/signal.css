@@ -1,0 +1,33 @@
+.signal{
+    position: relative;
+    margin:calc(var(--xx-large)) auto;
+    width: 85%;
+}
+.signal-block {
+    background-color: var(--brown);
+    padding:var(--xx-small);
+    border-radius: var(--medium);
+    padding: var(--xx-large);
+    font-size: var(--small-medium);
+}
+.signal-block p,.signal-block img {
+    margin-bottom: var(--medium);
+}
+.press {
+    position: relative;
+    background: var(--white);
+    width: 25%;
+    height: var(--large);
+    margin:var(--x-small) auto;
+    border-radius: var(--medium);
+    overflow: hidden;
+    color:var(--black);
+    z-index: 0;
+    padding: 2px;
+}
+.press>div{
+    border-radius: var(--medium);
+    z-index: -1;
+    /* width: 100%; */
+    font-size: var(--x-small);
+}
