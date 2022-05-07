@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import '../Css/books.css'
 import ReadingBooks from './BooksData.jsx'
 function Shelf(prop) {
@@ -18,6 +19,9 @@ function Shelf(prop) {
   )
 }
 function Books() {
+  useEffect(()=>{
+    document.title=`moodBTC - Books`;
+  })
   return (
     <div className="content-window">
       <div className="content-window-child" style={{ background: ' var(--light-gray) ' }}>

@@ -41,25 +41,9 @@ function TableRow(props) {
 function CryptoLive(porps) {
   const [search, setSearch] = useState("");
   const [coins, setCoins] = useState([]);
-  const [foundCoins, setFoundCoins] = useState([]);
-  // const [loading.setLoading] =useState(false);
   function typing(e) {
     let value = e.target.value;
     setSearch((search) => (search = value?.toLowerCase()));
-  }
-  function findCoins(search) {
-    if (!search) {
-      setFoundCoins((foundCoins) => (foundCoins = []));
-    } else {
-      setFoundCoins(
-        (foundCoins) =>
-          (foundCoins = coins.filter(
-            (coin) =>
-              coin.name?.toLowerCase().includes(search) ||
-              coin.symbol?.toLowerCase().includes(search)
-          ))
-      );
-    }
   }
 
   //------- Messari data fetch-------//
@@ -92,16 +76,19 @@ function CryptoLive(porps) {
   }
 
   useEffect(() => {
-    findCoins(search);
-    const ac = new AbortController();
     var timeout = setInterval(() => {
       getCoins();
     }, 5000);
     return () => {
       clearTimeout(timeout);
-      ac.abort();
     };
-  }, [search]);
+  });
+
+ const foundCoins = coins.filter(
+              (coin) =>
+                coin.name?.toLowerCase().includes(search) ||
+                coin.symbol?.toLowerCase().includes(search)
+            );
 
   return (
     <div className="cryptoLive">
@@ -131,7 +118,7 @@ function CryptoLive(porps) {
               <Loading color="var(--red)" size="1.3rem" delay="0.5s" />
             </div>
           )}
-          {!foundCoins.length &&
+          {!foundCoins &&
             coins.map((coin, index) => <TableRow key={index} coin={coin} />)}
           {foundCoins.length &&
             foundCoins.map((coin, index) => (

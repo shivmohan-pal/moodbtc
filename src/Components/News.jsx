@@ -44,6 +44,7 @@ function News() {
 //     history.push(link);
 //  }
    useEffect(()=>{
+        document.title=`moodBTC - News`;
           getNews(NewsListMessari());
    })
 //    const options = {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 export const HistoricalChartGecko = (id, days = 365, currency) =>
   `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${currency}&days=${days}`;
@@ -31,6 +31,7 @@ export const LogoMessariBysymbol = (symbol)=>{
     }
 }
  getcoinData();
+ console.log(id)
  return  LogoMessari(id);
 }   
 
@@ -67,8 +68,14 @@ let daysBack = new Date().getTime() - (24*60*60*1000)*daysCalc[frame][0];
       console.log(error);
  }
   }
-  getData();
-
+  
+  // useEffect(()=>{
+  //   const timmer=setTimeout(
+    getData()
+    // ,2000);
+  //   return ()=>clearTimeout(timmer)
+  // })
+  
   return value.slice(0,30);
 
  }

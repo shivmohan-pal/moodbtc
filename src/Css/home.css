@@ -97,26 +97,47 @@ letter-spacing: 0em;
     font-size: var(--medium);
     font-weight: bold;
     text-align: left;
+    display: flex;
+    justify-content: space-between;
 }
-
+.faq li span {
+    font-size: 1em;
+    color:var(--black);
+}
 .testimony {
  position: relative;
  width: 65%;
 }
-.testimony div { 
-    width:55%;
-    margin: auto;
-}
+
 .testimony h1 {
     color:var(--black);
-    margin-left: 0;
-    text-align: left;
 }
 .testimony p {
     font-family:Poppins;
-    text-align: left;
     color:#12264E;
 }
+.testimonies-block{
+    position: relative;
+    /* background: var(--black); */
+    min-width: 20rem;
+    min-height: 20rem;
+    border-radius: var(--large);
+    padding:var(--small-medium) var(--medium);
+    margin:auto var(--small);
+    transition: all 0.45s ease;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.testimonies-block:first-child{
+    /* margin-left: 7%; */
+}
+.testimonies-block p {
+    color: var(--white);
+    width: 60%;
+    margin: auto;
+}
+
 .join {
     position: relative;
     width:65%;

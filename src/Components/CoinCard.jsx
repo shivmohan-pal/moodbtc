@@ -22,19 +22,55 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
+// {
+//   id: 0,
+//   name: "Arweave",
+//   symbol: "AR",
+//   aboutcoin:
+//     "Arweave (AR) is a versatile enterprise-grade L1 smart contract platform.",
+//   finalPrice: "0.39 usdt",
+//   roi: "ROI in a year  ",
+//   s1: 0.068,
+//   s2: 0.14,
+//   r1: 0.16,
+//   r2: 0.18,
+// }
 function CoinGraph(props) {
   const [frame,setFrame] = useState('1Hr');
   let timeFrame = ["1Hr", "1D", "1W"];
+  var data = {
+    labels: fetchGraphData('FTT',frame)[0],
+    datasets: [
+      {
+        data: fetchGraphData('FTT',frame)[1],
+        fill: false,
+        lineTension: 0.35,
+        borderCapStyle: "butt",
+        borderJoinStyle: "miter",
+        borderColor: "#F6416C",
+        borderWidth: 1.5,
+        pointBorderWidth: 0,
+        pointHoverRadius: 3.5,
+      },
+    ],
+  };
   function handleClicked(e){
-     let tFrame = e.target.getAttribute('data-id');
-     setFrame((frame)=>frame = tFrame);
+     let dataId = e.target.getAttribute('data-id');
+     setFrame((frame)=>frame = dataId);
   }
-  // function fetchGraphData(frame) {
-  //   //  setgraphData(graphData)
-  //   let t= TimeSeriesDataMessari(coinsArray[0], frame);
-  //   return t.map((elem)=>elem[1]);
-  // }
+  function fetchGraphData(coinName, frame) {
+    //  setgraphData(graphData)
+    let t= TimeSeriesDataMessari(coinName, frame);
+    let time = t.map((elem)=>{
+      let fullDate = new Date(Number(elem[0]))
+      let date = fullDate.toString().slice(4,10);
+      let time = fullDate.toString().slice(16,21);
+      return  frame==='1Hr'?time:date
+    });
+    let price =t.map((elem)=>Number(elem[1].toFixed(2)));
+    return [time,price]
+  }
+  // console.log(fetchGraphData('Arweave',frame));
   return (
     <div className="coin-graph">
       <div className="supp-res-box">
@@ -61,7 +97,7 @@ function CoinGraph(props) {
             </span>
           ))}
         </div>
-        <Line data={props.data} options={props.options} />
+        <Line data={data} options={props.options} />
       </div>
     </div>
   );
