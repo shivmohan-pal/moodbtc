@@ -4,7 +4,7 @@ function Home() {
         <div className="home content-window">
             <div className="content-window-child">
                 <div className="howSignal">
-                    <img src="/images/icons8-bitcoin-100.png" alt='logo' />
+                    <img src="./images/icons8-bitcoin-100.png" alt='logo' />
                     <div>
                         <h3>How to Use Our signals</h3>
                         <p>
