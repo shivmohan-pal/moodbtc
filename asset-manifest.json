@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/moodbtc/static/css/main.b46c5b95.css",
-    "main.js": "/moodbtc/static/js/main.ca2b2d44.js",
+    "main.css": "/moodbtc/static/css/main.cf477c9e.css",
+    "main.js": "/moodbtc/static/js/main.a6f0bd21.js",
     "static/media/instagram.svg": "/moodbtc/static/media/instagram.76a85ef496b6b2e8bdfd781a64ec6da5.svg",
     "static/media/twitter.svg": "/moodbtc/static/media/twitter.87144aa04d1a073dd0c9cd8ea579dcdf.svg",
     "static/media/github.svg": "/moodbtc/static/media/github.b525bfa008487d7c431cbd48d40c8699.svg",
     "index.html": "/moodbtc/index.html",
-    "main.b46c5b95.css.map": "/moodbtc/static/css/main.b46c5b95.css.map",
-    "main.ca2b2d44.js.map": "/moodbtc/static/js/main.ca2b2d44.js.map"
+    "main.cf477c9e.css.map": "/moodbtc/static/css/main.cf477c9e.css.map",
+    "main.a6f0bd21.js.map": "/moodbtc/static/js/main.a6f0bd21.js.map"
   },
   "entrypoints": [
-    "static/css/main.b46c5b95.css",
-    "static/js/main.ca2b2d44.js"
+    "static/css/main.cf477c9e.css",
+    "static/js/main.a6f0bd21.js"
   ]
 }
