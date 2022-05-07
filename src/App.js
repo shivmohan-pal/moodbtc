@@ -11,8 +11,7 @@ import './Css/App.css';
 
 function App() {
   return (
-    <Router>
-      {/* <HashRouter basename='/'> */}
+     <HashRouter basename='/'>
       <div className="App">
         <Navbar />
         <div className='main'>
@@ -27,8 +26,7 @@ function App() {
         </div>
         <Footer />
       </div>
-    {/* </HashRouter> */}
-     </Router>
+     </HashRouter>
   );
 }
 
