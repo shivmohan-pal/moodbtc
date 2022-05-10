@@ -10,8 +10,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { LogoMessariBysymbol, TimeSeriesDataMessari } from "../config/api";
-import { useState } from "react";
+import { LogoMessariBysymbol, HistoricalDataMessari} from "../config/api";
+import { useState ,useRef, useEffect} from "react";
 
 ChartJS.register(
   CategoryScale,
@@ -37,40 +37,79 @@ ChartJS.register(
 // }
 function CoinGraph(props) {
   const [frame,setFrame] = useState('1Hr');
+  const [value,setValue] = useState([]);
+  const componentMounted = useRef(true);
   let timeFrame = ["1Hr", "1D", "1W"];
-  var data = {
-    labels: fetchGraphData('FTT',frame)[0],
-    datasets: [
-      {
-        data: fetchGraphData('FTT',frame)[1],
-        fill: false,
-        lineTension: 0.35,
-        borderCapStyle: "butt",
-        borderJoinStyle: "miter",
-        borderColor: "#F6416C",
-        borderWidth: 1.5,
-        pointBorderWidth: 0,
-        pointHoverRadius: 3.5,
-      },
-    ],
-  };
+   var data = {
+  labels: value.map((data)=>data[0]),
+  datasets: [
+    {
+      data: value.map((data)=>data[1]),
+      fill: false,
+      lineTension: 0.35,
+      borderCapStyle: "butt",
+      borderJoinStyle: "miter",
+      borderColor: "#F6416C",
+      borderWidth: 1.5,
+      pointBorderWidth: 0,
+      pointHoverRadius: 3.5,
+    },
+  ],
+};
+
+  function TimeSeriesDataMessari(coinName,frame){
+    let daysCalc = {
+      "1Hr": [1,''],
+      "1D": [30,'1d'],
+      "1W":[210,'1w']
+    } 
+   let daysBack = new Date().getTime() - (24*60*60*1000)*daysCalc[frame][0];
+    let interval=daysCalc[frame][1];
+    let columns = 'timestamp,close';
+     async function getData(){
+       try{
+      const res = await fetch(HistoricalDataMessari(coinName,daysBack,interval,columns));
+      const data = await res.json();
+      // setValue((value)=>value =
+      //    data.data.values 
+      //   );
+        return data.data.values;
+       }catch(error){
+         console.log(error);
+    }
+     }
+      //  getData()
+      //  console.log(getData());
+    //  return value.slice(0,30);
+    return getData();
+    }
   function handleClicked(e){
      let dataId = e.target.getAttribute('data-id');
      setFrame((frame)=>frame = dataId);
   }
-  function fetchGraphData(coinName, frame) {
+  // function fetchGraphData(coinName, frame){
     //  setgraphData(graphData)
-    let t= TimeSeriesDataMessari(coinName, frame);
-    let time = t.map((elem)=>{
-      let fullDate = new Date(Number(elem[0]))
-      let date = fullDate.toString().slice(4,10);
-      let time = fullDate.toString().slice(16,21);
-      return  frame==='1Hr'?time:date
-    });
-    let price =t.map((elem)=>Number(elem[1].toFixed(2)));
-    return [time,price]
-  }
-  // console.log(fetchGraphData('Arweave',frame));
+
+ console.log(value)
+ useEffect( () => {
+  componentMounted.current=true;
+     if (componentMounted.current){ // is component still mounted?
+      TimeSeriesDataMessari(props.coinName, frame)
+      .then((data)=>{
+        setValue((value)=>value= data.map((elem)=>{
+          let fullDate = new Date(Number(elem[0]))
+          let date = fullDate.toString().slice(4,10);
+          let time = fullDate.toString().slice(16,21);
+         let price =Number(elem[1].toFixed(2));
+          return  [frame==='1Hr'?time:date,price]
+        }));      
+      }
+      );//  write data to state 
+     }
+     return () => { // This code runs when component is unmounted
+         componentMounted.current = false; //  set it to false when we leave the page
+     }
+ },[frame]);
   return (
     <div className="coin-graph">
       <div className="supp-res-box">
@@ -104,13 +143,13 @@ function CoinGraph(props) {
 }
 
 function CoinCard(props) {
-  let symbol = props.coin.symbol === "DOT" ? "polkadot" : props.coin.symbol;
+  // let symbol = props.coin.symbol === "DOT" ? "polkadot" : props.coin.symbol;
   return (
     <div className="coin-card" style={props.style}>
       <div className="coin-details">
         <h1 className="coin-name">
           <img
-            src={LogoMessariBysymbol(symbol).toLowerCase()}
+            src={LogoMessariBysymbol(props.coinName)?.toLowerCase()}
             alt="coin logo"
             style={{ width: "48px" }}
           />
@@ -128,6 +167,7 @@ function CoinCard(props) {
         data={props.graphData}
         options={props.graphOptions}
         coinData={props.coin}
+        coinName={props.coinName}
       />
     </div>
   );

@@ -12,6 +12,7 @@
   /* position:absolute; */
   /* background-color: rgba(0,0,0,0.5); */
   width: 92%; 
+  max-width: calc(1800px - 2%);
   margin:2% auto;
   display:flex;
   justify-content: space-around;

@@ -8,7 +8,9 @@
      align-items: center;
      padding: 1vh 1vw;
      z-index: 2;
+     max-width: calc(1800px - 2%);
      border-bottom: 2px solid var(--white);
+     margin: auto;
 }
 .fisSlide {
     position:absolute;

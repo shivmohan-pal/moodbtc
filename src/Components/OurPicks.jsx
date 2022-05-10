@@ -128,7 +128,7 @@ const options = {
 function OurPicks() {
   var coinsArray = ["Arweave","Polkadot","Tether","Matic","FTT","Cosmos","Theta"];
   const [dot, setDot] = useState(0);
-  const [graphData, setgraphData] = useState([]);
+  // const [graphData, setgraphData] = useState([]);
   function handleClick(e) {
     let dataId = e.target.getAttribute("data-id");
     setDot((dot) => (dot = Number(dataId)));
@@ -152,6 +152,7 @@ function OurPicks() {
                     style={{ transform: `translateX(${-(dot * 103.3)}%)` }}
                     key={index}
                     coin={element}
+                    coinName = {coinsArray[index]}
                     graphOptions={options}
                   />
                 );

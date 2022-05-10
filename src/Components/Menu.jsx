@@ -10,7 +10,7 @@ function Menu({ close }) {
             <div className='menu-box'>
                 <div className="nav">
                     <NavLink to="/books" onClick={doClose}><div className='fisSlide'></div>Books</NavLink>
-                    <NavLink to="/live-crypto" onClick={doClose}><div className='fisSlide'></div>Live Coins</NavLink>
+                    <NavLink to="/live-coins" onClick={doClose}><div className='fisSlide'></div>Live Coins</NavLink>
                     <NavLink to="/ourpicks" onClick={doClose}><div className='fisSlide'></div>Our Picks</NavLink>
                     <NavLink to="/news" onClick={doClose}><div className='fisSlide'></div>News</NavLink>
                 </div>

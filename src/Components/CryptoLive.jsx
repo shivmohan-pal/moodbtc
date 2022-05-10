@@ -49,7 +49,7 @@ function CryptoLive(porps) {
   //------- Messari data fetch-------//
   async function getCoins() {
     try {
-      const res = await fetch(CoinListMessari(500));
+      const res = await fetch(CoinListMessari(1000));
       const data = await res.json();
       setCoins((prevCoins) =>
         data.data.map((elem, index) => {
@@ -84,12 +84,12 @@ function CryptoLive(porps) {
     };
   });
 
- const foundCoins = coins.filter(
+ const foundCoins = search? coins.filter(
               (coin) =>
                 coin.name?.toLowerCase().includes(search) ||
                 coin.symbol?.toLowerCase().includes(search)
-            );
-
+            ):'';
+            console.log(foundCoins)
   return (
     <div className="cryptoLive">
       <h1 className="heading">Live Crypto Currency Price</h1>
@@ -119,7 +119,7 @@ function CryptoLive(porps) {
             </div>
           )}
           {!foundCoins &&
-            coins.map((coin, index) => <TableRow key={index} coin={coin} />)}
+            coins.slice(0,100).map((coin, index) => <TableRow key={index} coin={coin} />)}
           {foundCoins.length &&
             foundCoins.map((coin, index) => (
               <TableRow key={index} coin={coin} />

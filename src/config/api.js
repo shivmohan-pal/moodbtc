@@ -1,4 +1,4 @@
-import { useState , useEffect } from "react";
+import { useState , useEffect} from "react";
 
 export const HistoricalChartGecko = (id, days = 365, currency) =>
   `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${currency}&days=${days}`;
@@ -20,6 +20,7 @@ export const LogoMessari = (messariCoinId) =>
 
 export const LogoMessariBysymbol = (symbol)=>{
   const [id , setId] = useState("");
+
   async function getcoinData() {
     try{
     const res = await fetch(`https://data.messari.io/api/v1/assets/${symbol}`);

@@ -1,7 +1,8 @@
 .App {
   position: relative;
   text-align: center;
-  max-width: 1400px;
+  max-width: 1800px;
+  background-color: var(--black);
   margin:auto;
 }
 .main {
