@@ -21,13 +21,13 @@ function TableRow(props) {
       </div>
       <div className="table-col">
         <span style={{ color: props.coin.price_color }}>
-          ${props.coin.current_price.toLocaleString("en-US")}
-          {/* {Intl.NumberFormat( 'en-US', { maximumFractionDigits: 1,notation: "compact" , compactDisplay: "short" }).format(props.coin.current_price)} */}
+          ${props.coin.current_price?.toLocaleString("en-US")}
+          {/* {Intl.NumberFormat( 'en-US', { maximumFractionDigits: 1,notation: "compact" , compactDisplay: "short" }).format(props?.coin.current_price)} */}
         </span>
       </div>
       <div className="table-col">
         <span>
-          ${/* {props.coin.market_cap.toLocaleString('en-US')} */}
+          ${/* {props.coin.market_cap?.toLocaleString('en-US')} */}
           {Intl.NumberFormat("en-US", {
             maximumFractionDigits: 1,
             notation: "compact",
