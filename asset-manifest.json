@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/moodbtc/static/css/main.cf477c9e.css",
-    "main.js": "/moodbtc/static/js/main.6c9176d2.js",
+    "main.css": "/moodbtc/static/css/main.dec4f324.css",
+    "main.js": "/moodbtc/static/js/main.fa941090.js",
     "static/media/instagram.svg": "/moodbtc/static/media/instagram.76a85ef496b6b2e8bdfd781a64ec6da5.svg",
     "static/media/twitter.svg": "/moodbtc/static/media/twitter.87144aa04d1a073dd0c9cd8ea579dcdf.svg",
     "static/media/github.svg": "/moodbtc/static/media/github.b525bfa008487d7c431cbd48d40c8699.svg",
     "index.html": "/moodbtc/index.html",
-    "main.cf477c9e.css.map": "/moodbtc/static/css/main.cf477c9e.css.map",
-    "main.6c9176d2.js.map": "/moodbtc/static/js/main.6c9176d2.js.map"
+    "main.dec4f324.css.map": "/moodbtc/static/css/main.dec4f324.css.map",
+    "main.fa941090.js.map": "/moodbtc/static/js/main.fa941090.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf477c9e.css",
-    "static/js/main.6c9176d2.js"
+    "static/css/main.dec4f324.css",
+    "static/js/main.fa941090.js"
   ]
 }
